@@ -154,3 +154,6 @@ ipybuilding/labextension/*.tgz
 
 # Packed lab extensions
 ipybuilding/labextension
+
+## Data
+notebooks/data
