@@ -1,5 +1,4 @@
 geopandas
 pandas
 pooch
-matplotlib
 pydeck
