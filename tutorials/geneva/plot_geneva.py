@@ -17,7 +17,7 @@ config = get_config()
 path = config["GENEVA_DATASET_PATH"]
 path
 
-#If not already present on your computer, this function will automatically
+# If not already present on your computer, this function will automatically
 # download the 3 .gpkg files containing the city building's geometries from a remote serveur
 # and save them in the local geneva dataset directory for futur use.
 # If the file are already present in the local geneva dataset directory, the function will
