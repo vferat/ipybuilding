@@ -34,5 +34,6 @@ base_path
 # theses files can esaly be loaded thanks to geopandas:
 
 import geopandas
+
 bases = geopandas.read_file(base_path)
 bases

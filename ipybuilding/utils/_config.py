@@ -1,6 +1,7 @@
 import json
 import os
 
+
 def _get_user_dir():
     """Get user directory."""
     if os.name.lower() == "nt":
@@ -35,11 +36,7 @@ def _get_data_path():
     return data_dir
 
 
-default_config = {
-    "GENEVA_DATASET_PATH": os.path.join(
-        _get_data_path(), "GENEVA"
-    )
-}
+default_config = {"GENEVA_DATASET_PATH": os.path.join(_get_data_path(), "GENEVA")}
 
 
 def _save_config(config):

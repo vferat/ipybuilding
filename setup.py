@@ -17,9 +17,7 @@ if version is None:
 
 
 # Descriptions
-short_description = (
-    "A simple open source Python package"
-)
+short_description = "A simple open source Python package"
 long_description_file = Path(__file__).parent / "README.md"
 with open(long_description_file, "r", encoding="utf8") as file:
     long_description = file.read()

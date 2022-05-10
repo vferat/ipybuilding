@@ -21,9 +21,9 @@ curdir = os.path.dirname(__file__)
 
 # -- Project information -----------------------------------------------------
 
-project = 'ipybuilding'
-copyright = '2022, Victor Férat, Jonathan Chambers'
-author = 'Victor Férat, Jonathan Chambers'
+project = "ipybuilding"
+copyright = "2022, Victor Férat, Jonathan Chambers"
+author = "Victor Férat, Jonathan Chambers"
 
 
 # -- General configuration ---------------------------------------------------
@@ -51,7 +51,7 @@ extensions = [
 master_doc = "index"
 
 # autodoc
-autodoc_typehints = 'none'
+autodoc_typehints = "none"
 
 # pygments style
 pygments_style = "default"
@@ -81,9 +81,7 @@ numpydoc_xref_param_type = True
 
 # sphinx_gallery_conf
 sphinx_gallery_conf = {
-    "examples_dirs": os.path.abspath(
-        os.path.join(curdir, "..", "..", "tutorials")
-    ),
+    "examples_dirs": os.path.abspath(os.path.join(curdir, "..", "..", "tutorials")),
     "gallery_dirs": "auto_tutorials",
     "subsection_order": ExplicitOrder(
         [
