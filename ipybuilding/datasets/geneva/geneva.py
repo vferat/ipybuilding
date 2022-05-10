@@ -11,12 +11,12 @@ from ...utils._config import get_config
 def load_data():
     """
     Get path to local copy of Geneva dataset.
+
     Returns
     -------
-    path : str
-        path to local copy of the requested data.
+    path : list of str
+        paths to local copy of the requested data.
     """  # noqa
-
     config = get_config()
     path = config["GENEVA_DATASET_PATH"]
     fetcher = pooch.create(
