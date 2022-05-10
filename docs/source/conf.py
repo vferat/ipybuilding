@@ -121,3 +121,35 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = [os.path.abspath(os.path.join(curdir, "../_static"))]
+
+def append_attr_meth_examples(app, what, name, obj, options, lines):
+    """Append SG examples backreferences to method and attr docstrings."""
+    # NumpyDoc nicely embeds method and attribute docstrings for us, but it
+    # does not respect the autodoc templates that would otherwise insert
+    # the .. include:: lines, so we need to do it.
+    # Eventually this could perhaps live in SG.
+    if what in ("attribute", "method"):
+        size = os.path.getsize(
+            os.path.join(
+                os.path.dirname(__file__),
+                "generated",
+                "backreferences",
+                "%s.examples" % (name,),
+            )
+        )
+        if size > 0:
+            lines += """
+.. _sphx_glr_backreferences_{1}:
+.. rubric:: Examples using ``{0}``:
+.. minigallery:: {1}
+""".format(
+                name.split(".")[-1], name
+            ).split(
+                "\n"
+            )
+
+
+# -- Auto-convert markdown pages to demo --------------------------------------
+def setup(app):
+    app.connect("autodoc-process-docstring", append_attr_meth_examples)
+    app.add_transform(AutoStructify)
