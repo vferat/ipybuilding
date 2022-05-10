@@ -26,7 +26,7 @@ path
 from ipybuilding.datasets import geneva
 
 base_path, facade_path, roof_path = geneva.load_data()
-
+base_path
 #%%
 # base_path, facade_path, roof_path are the respective path to the files
 # of base, roof and facade geometries of geneva's buildings.
