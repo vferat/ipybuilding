@@ -1,0 +1,125 @@
+# Configuration file for the Sphinx documentation builder.
+#
+# This file only contains a selection of the most common options. For a full
+# list see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+# -- Path setup --------------------------------------------------------------
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
+import os
+
+import pydata_sphinx_theme
+from recommonmark.transform import AutoStructify
+from sphinx_gallery.sorting import ExplicitOrder
+
+curdir = os.path.dirname(__file__)
+
+
+# -- Project information -----------------------------------------------------
+
+project = 'ipybuilding'
+copyright = '2022, Victor Férat, Jonathan Chambers'
+author = 'Victor Férat, Jonathan Chambers'
+
+
+# -- General configuration ---------------------------------------------------
+
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.doctest",
+    "sphinx.ext.coverage",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.intersphinx",
+    "nbsphinx",
+    "sphinx_gallery.gen_gallery",
+    "recommonmark",
+    "numpydoc",
+]
+
+
+# sphinx
+master_doc = "index"
+
+# autodoc
+autodoc_typehints = 'none'
+
+# pygments style
+pygments_style = "default"
+
+# A list of ignored prefixes for module index sorting.
+modindex_common_prefix = ["ipybuilding."]
+
+# autosummary
+autosummary_generate = True
+autodoc_default_options = {"inherited-members": None}
+
+# intersphinx_mapping
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "numpy": ("https://numpy.org/devdocs", None),
+    "scipy": ("https://scipy.github.io/devdocs", None),
+    "matplotlib": ("https://matplotlib.org", None),
+    "geopandas": ("https://geopandas.org/en/stable/", None),
+    "pydeck": ("https://deckgl.readthedocs.io/en/latest/", None),
+    "pandas": ("https://pandas.pydata.org/pandas-docs/stable/", None),
+}
+
+# numpy doc
+numpydoc_class_members_toctree = False
+numpydoc_attributes_as_param_list = True
+numpydoc_xref_param_type = True
+
+# sphinx_gallery_conf
+sphinx_gallery_conf = {
+    "examples_dirs": os.path.abspath(
+        os.path.join(curdir, "..", "..", "tutorials")
+    ),
+    "gallery_dirs": "auto_tutorials",
+    "subsection_order": ExplicitOrder(
+        [
+            "../../tutorials/geneva",
+        ]
+    ),
+    "reference_url": {"ipybuilding": None},  # current lib uses None
+    "backreferences_dir": "generated/backreferences",
+    "doc_module": ("ipybuilding",),
+}
+
+# Add any paths that contain templates here, relative to this directory.
+templates_path = ["_templates"]
+
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# This pattern also affects html_static_path and html_extra_path.
+exclude_patterns = []
+
+# -- Options for HTML output -------------------------------------------------
+
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+#
+html_theme = "pydata_sphinx_theme"
+
+html_theme_options = {
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/vferat/ipybuilding",
+            "icon": "fab fa-github-square",
+        }
+    ]
+}
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = [os.path.abspath(os.path.join(curdir, "../_static"))]

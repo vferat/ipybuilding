@@ -1,0 +1,8 @@
+name: ipybuilding
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas
+  - pydeck
+  - geopandas
