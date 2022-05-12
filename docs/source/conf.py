@@ -85,7 +85,8 @@ sphinx_gallery_conf = {
     "gallery_dirs": "auto_tutorials",
     "subsection_order": ExplicitOrder(
         [
-            "../../tutorials/geneva",
+            "../../tutorials/datasets",
+            "../../tutorials/Geneva",
         ]
     ),
     "reference_url": {"ipybuilding": None},  # current lib uses None
