@@ -1,5 +1,5 @@
 """
-Geneva
+Load Geneva dataset
 ===================================
 In this tutorial, we will learn how to load Geneva 3D buildings datasets.
 """

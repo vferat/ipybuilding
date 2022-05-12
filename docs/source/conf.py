@@ -11,6 +11,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+import subprocess
 
 import pydata_sphinx_theme
 from recommonmark.transform import AutoStructify
@@ -86,7 +87,7 @@ sphinx_gallery_conf = {
     "subsection_order": ExplicitOrder(
         [
             "../../tutorials/datasets",
-            "../../tutorials/Geneva",
+            "../../tutorials/geneva",
         ]
     ),
     "reference_url": {"ipybuilding": None},  # current lib uses None
@@ -151,6 +152,6 @@ def append_attr_meth_examples(app, what, name, obj, options, lines):
 
 
 # -- Auto-convert markdown pages to demo --------------------------------------
-def setup(app):
+def setup(app):        
     app.connect("autodoc-process-docstring", append_attr_meth_examples)
     app.add_transform(AutoStructify)
