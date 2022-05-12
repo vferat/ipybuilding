@@ -127,10 +127,6 @@ r = pydeck.Deck(
         'text': 'IDC: {indice} MJ/m2·a'
     }
 )
+r.to_html()
 
-r.to_html("../../docs/source/auto_tutorials/geneva/output.html")
-
-####################################
-# .. raw:: html
-#     :file: output.html
-#
+#  .. image:: download.png
