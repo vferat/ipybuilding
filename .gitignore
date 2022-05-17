@@ -164,3 +164,4 @@ docs/_build/
 docs/source/generated
 docs/source/API/generated
 docs/source/auto_tutorials
+.vscode/settings.json
