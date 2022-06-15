@@ -122,7 +122,7 @@ html_theme_options = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = [os.path.abspath(os.path.join(curdir, "../_static"))]
+html_static_path = [os.path.abspath(os.path.join(curdir, "./_static"))]
 
 def append_attr_meth_examples(app, what, name, obj, options, lines):
     """Append SG examples backreferences to method and attr docstrings."""
