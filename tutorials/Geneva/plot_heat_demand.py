@@ -26,7 +26,7 @@ toits.columns = [s.lower() for s in toits.columns]
 # Next step is to load Geneva's heat demand data
 import pandas as pd
 
-DATA_URL = "https://raw.githubusercontent.com/vferat/ipybuilding/dev-victor/tutorials/Geneva/SCANE_INDICE_DERNIER.csv"
+DATA_URL = "https://raw.githubusercontent.com/vferat/ipybuilding/main/tutorials/Geneva/SCANE_INDICE_DERNIER.csv"
 heat_demand = pd.read_csv(DATA_URL, sep=';')
 heat_demand.columns = [s.lower() for s in heat_demand.columns]
 heat_demand.egid = heat_demand.egid.astype(int)
