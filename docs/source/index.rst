@@ -11,5 +11,6 @@ Welcome to ipybuilding's documentation!
 .. toctree::
    :hidden:
 
+   install.rst
    auto_tutorials/index
    API/index
