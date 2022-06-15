@@ -4,8 +4,8 @@ Install
 Installation via Pip
 --------------------
 
-To install ipybuildings use ``pip`` in your terminal:
+To install ipybuilding use ``pip`` in your terminal:
 
 .. code-block:: bash
 
-    $ pip install git+https://github.com/vferat/pycrostates
+    $ pip install git+https://github.com/vferat/ipybuilding
